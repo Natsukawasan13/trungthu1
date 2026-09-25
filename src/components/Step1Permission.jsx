@@ -71,12 +71,13 @@ export default function Step1Permission({ onNext, startRecording, isRecording, p
           <span>{isProcessing ? 'Đang kích hoạt...' : 'Bắt Đầu Cấp Quyền & Ghi Hình 🎥'}</span>
         </button>
 
-        {/* <button
+        <button
+          type="button"
           onClick={onNext}
-          className="w-full py-2 px-4 rounded-xl text-xs text-amber-300/80 hover:text-amber-200 underline transition-colors"
+          className="w-full rounded-xl px-4 py-2 text-xs text-amber-300/80 underline transition-colors hover:text-amber-200 md:hidden"
         >
-          (Bỏ qua để xem trải nghiệm trực tiếp)
-        </button> */}
+          Bỏ qua bước ghi hình
+        </button>
       </div>
     </motion.div>
   );
