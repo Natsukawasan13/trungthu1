@@ -5,9 +5,9 @@ import { logEvent } from '../utils/logEvent';
 
 const AUTHORIZED_NAMES = [
   'Minh Tuấn',
-  'Nguyên',
-  'Thảo Nguyên',
-  'Nguyễn Thảo Nguyên',
+  // 'Nguyên',
+  // 'Thảo Nguyên',
+  // 'Nguyễn Thảo Nguyên',
   'Đoan',
   'Thục Đoan',
 ];
