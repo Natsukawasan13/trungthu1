@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  api:
+    build: ./server
+    user: "1000:1000"
+    environment:
+      PORT: 3000
+    volumes:
+      - ./server/data:/app/data
+      - ./server/uploads:/app/uploads
+    restart: unless-stopped

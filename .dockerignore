@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.gitignore
+.env
+server/node_modules
+server/data
+server/uploads
+video
+*.log

@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Hiệu ứng hào quang đèn lồng */
+  .lantern-glow {
+    box-shadow: 0 0 35px rgba(245, 158, 11, 0.6), 0 0 70px rgba(239, 68, 68, 0.35);
+  }
+
+  /* Hiệu ứng hào quang trăng rằm phát sáng khi tắt đèn */
+  .dark-glow {
+    box-shadow: 0 0 70px rgba(251, 191, 36, 0.85), 0 0 130px rgba(245, 158, 11, 0.55);
+  }
+
+  /* Chất liệu giấy thư truyền thống */
+  .letter-paper {
+    background: radial-gradient(circle at 50% 50%, #fffbeb 0%, #fef3c7 70%, #fde68a 100%);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(217, 119, 6, 0.2);
+  }
+}
+
+/* Custom scrollbar thanh thoát */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(5, 8, 22, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fbbf24;
+}
+
+/* Sao lấp lánh ngẫu nhiên */
+.sparkle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
