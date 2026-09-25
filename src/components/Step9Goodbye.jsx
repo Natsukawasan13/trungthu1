@@ -1,16 +1,28 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-export default function Step9Goodbye({ isVoiceMuted, playVoiceAudio }) {
+export default function Step9Goodbye({ userName, isVoiceMuted, playVoiceAudio }) {
+  const normalizedUserName = (userName || '')
+    .trim()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/Đ/g, 'D')
+    .replace(/\s+/g, ' ')
+    .toLocaleLowerCase('vi-VN');
+  const isNguyenName = ['nguyen', 'thao nguyen', 'nguyen thao nguyen']
+    .includes(normalizedUserName);
+
   useEffect(() => {
     if (isVoiceMuted) return undefined;
 
     const timer = setTimeout(() => {
-      playVoiceAudio('/assets/audio/final.mp3');
+      const voiceFile = isNguyenName ? 'final.mp3' : 'end2.mp3';
+      playVoiceAudio(`/assets/audio/${voiceFile}`);
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [isVoiceMuted, playVoiceAudio]);
+  }, [isNguyenName, isVoiceMuted, playVoiceAudio]);
 
   return (
     <motion.h1

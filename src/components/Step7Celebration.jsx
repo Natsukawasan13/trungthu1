@@ -10,7 +10,18 @@ export default function Step7Celebration({
   isVoiceMuted,
   onRestartChoice,
   onOpenMessage,
+  onContinue,
 }) {
+  const normalizedUserName = (userName || '')
+    .trim()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/Đ/g, 'D')
+    .replace(/\s+/g, ' ')
+    .toLocaleLowerCase('vi-VN');
+  const showPersonalMessage = ['nguyen', 'thao nguyen', 'nguyen thao nguyen']
+    .includes(normalizedUserName);
   useEffect(() => {
     if (isVoiceMuted) return undefined;
 
@@ -125,10 +136,10 @@ export default function Step7Celebration({
 
         <button
           type="button"
-          onClick={onOpenMessage}
+          onClick={showPersonalMessage ? onOpenMessage : onContinue}
           className="w-full rounded-2xl border border-red-700/30 bg-white/30 px-5 py-3 text-sm font-bold text-red-900 transition hover:bg-white/50 active:scale-95"
         >
-          Lời nhắn của tôi 💌
+          {showPersonalMessage ? 'Lời nhắn của tôi 💌' : 'Tiếp'}
         </button>
 
         {/* Nút quay lại trải nghiệm nhánh khác */}

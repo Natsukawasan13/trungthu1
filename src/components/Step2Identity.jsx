@@ -8,6 +8,8 @@ const AUTHORIZED_NAMES = [
   'Nguyên',
   'Thảo Nguyên',
   'Nguyễn Thảo Nguyên',
+  'Đoan',
+  'Thục Đoan',
 ];
 
 const normalizeName = (name) => name

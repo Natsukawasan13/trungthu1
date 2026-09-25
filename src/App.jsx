@@ -262,6 +262,7 @@ export default function App() {
               isVoiceMuted={isVoiceMuted}
               onRestartChoice={handleRestartChoice}
               onOpenMessage={() => setStep(8)}
+              onContinue={() => setStep(9)}
             />
           )}
 
@@ -297,6 +298,7 @@ export default function App() {
           {step === 9 && (
             <Step9Goodbye
               key="step-9"
+              userName={userName}
               isVoiceMuted={isVoiceMuted}
               playVoiceAudio={playVoiceAudio}
             />
