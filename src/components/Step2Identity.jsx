@@ -4,9 +4,7 @@ import { UserCheck, ArrowRight } from 'lucide-react';
 import { logEvent } from '../utils/logEvent';
 
 const AUTHORIZED_NAMES = [
-  'Hoàng Long',
   'Minh Tuấn',
-  'Bạn Thân',
   'Nguyên',
   'Thảo Nguyên',
   'Nguyễn Thảo Nguyên',
@@ -130,7 +128,7 @@ export default function Step2Identity({ userName, setUserName, onNext, playVoice
                 setInputValue(e.target.value);
                 if (error) setError('');
               }}
-              placeholder="Ví dụ: Hoàng Long, Minh Tuấn, Bạn Thân..."
+              placeholder="Nhập đúng tên"
               maxLength={30}
               disabled={isVoicePlaying && !isVoiceMuted}
               className="w-full px-4 py-3 bg-black/60 border-2 border-amber-500/50 rounded-2xl text-amber-100 placeholder-amber-400/40 text-sm focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/30 transition-all"
